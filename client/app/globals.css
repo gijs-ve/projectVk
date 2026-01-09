@@ -8,6 +8,16 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  /* Brand palette mirrored from tailwind.config.ts so v4 picks it up */
+  --color-brand-bg: #1c140f;
+  --color-brand-surface: #241711;
+  --color-brand-overlay: #2d1d14;
+  --color-brand-accent: #e0b15a;
+  --color-brand-accent-muted: #b77b42;
+  --color-brand-text: #f7e6cf;
+  --color-brand-text-muted: #d7c2a9;
+  --color-brand-border: #3a271b;
+  --color-brand-glow: #f2c77f;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
