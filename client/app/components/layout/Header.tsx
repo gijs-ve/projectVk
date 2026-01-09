@@ -21,11 +21,11 @@ const Header = ({ navItems, pubName, strapline, locale, onLocaleChange, isMenuOp
       <Link href="/" className="flex items-center gap-3" aria-label="Go to home">
         <div className="leading-tight">
           <p className="text-sm text-brand-textMuted">{strapline}</p>
-          <p className="text-lg font-semibold">{pubName}</p>
+          <p className="text-lg font-semibold font-display tracking-[0.02em]">{pubName}</p>
         </div>
       </Link>
 
-      <nav className="hidden items-center gap-1 text-sm font-medium md:flex">
+      <nav className="hidden items-center gap-1 text-sm font-semibold font-display tracking-[0.03em] md:flex">
         {navItems.map((item) => (
           <Link
             key={item.label}
@@ -94,7 +94,7 @@ const Header = ({ navItems, pubName, strapline, locale, onLocaleChange, isMenuOp
             <Link
               key={item.label}
               href={resolveHref(item.href)}
-              className="rounded-xl px-3 py-3 text-base text-brand-text transition-colors hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-accent"
+              className="rounded-xl px-3 py-3 text-base text-brand-text font-display tracking-[0.03em] transition-colors hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-accent"
             >
               {item.label}
             </Link>
