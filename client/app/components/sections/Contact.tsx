@@ -40,8 +40,8 @@ const Contact = ({ contact, sectionCopy }: ContactProps) => (
           </Link>
         </div>
         <div className="flex flex-wrap gap-3 pt-2">
-          <ArrowLink href="#events" label={sectionCopy.linkLabels.upcoming} tone="ghost" />
-          <ArrowLink href="#home" label={sectionCopy.linkLabels.backToTop} tone="ghost" />
+          <ArrowLink href="/events" label={sectionCopy.linkLabels.upcoming} tone="ghost" />
+          <ArrowLink href="/" label={sectionCopy.linkLabels.backToTop} tone="ghost" />
         </div>
       </div>
 

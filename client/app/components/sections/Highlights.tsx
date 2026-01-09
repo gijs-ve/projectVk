@@ -19,10 +19,6 @@ const Highlights = ({ sectionCopy, items }: HighlightsProps) => (
           key={item.title}
           className="relative flex h-full flex-col gap-3 rounded-2xl border border-brand-border bg-brand-overlay/70 px-5 py-6 text-brand-text shadow-soft"
         >
-          <div
-            className="absolute right-4 top-4 h-10 w-10 rounded-full bg-brand-accent/15"
-            aria-hidden
-          />
           <h3 className="text-xl font-semibold">{item.title}</h3>
           <p className="text-sm text-brand-textMuted">{item.description}</p>
         </div>

@@ -26,7 +26,7 @@ const Events = ({ sectionCopy, items }: EventsProps) => (
             <p className="text-sm text-brand-textMuted">{event.blurb}</p>
           </div>
           <div className="mt-6">
-            <ArrowLink href="#contact" label={sectionCopy.ctaLabel} tone="ghost" />
+            <ArrowLink href="/contact" label={sectionCopy.ctaLabel} tone="ghost" />
           </div>
         </article>
       ))}

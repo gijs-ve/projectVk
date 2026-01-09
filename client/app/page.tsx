@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import Contact from "./components/sections/Contact";
 import Events from "./components/sections/Events";
 import Hero from "./components/sections/Hero";
 import Highlights from "./components/sections/Highlights";
@@ -17,12 +16,12 @@ export default function HomePage() {
   useEffect(() => {
     if (typeof navigator === "undefined") return;
     const lang = navigator.language.toLowerCase();
-    setLocale(lang.startsWith("nl") ? "nl" : "en");
+    if (lang.startsWith("nl")) setLocale("nl");
   }, []);
 
   const content = useMemo(() => getSiteContent(locale), [locale]);
-  const contactNav = content.navItems.find((item) => item.href === "#contact") ?? content.navItems[0];
-  const eventsNav = content.navItems.find((item) => item.href === "#events") ?? content.navItems[0];
+  const contactNav = content.navItems.find((item) => item.href.includes("contact")) ?? content.navItems[0];
+  const eventsNav = content.navItems.find((item) => item.href.includes("events")) ?? content.navItems[0];
 
   return (
     <div className="min-h-screen bg-brand-bg text-brand-text">
@@ -41,7 +40,6 @@ export default function HomePage() {
           <Hero content={content.hero} />
           <Highlights sectionCopy={content.highlightsSection} items={content.highlights} />
           <Events sectionCopy={content.eventsSection} items={content.events} />
-          <Contact contact={content.contact} sectionCopy={content.contactSection} />
         </main>
 
         <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-brand-border pt-6 text-sm text-brand-textMuted">
@@ -50,13 +48,13 @@ export default function HomePage() {
           </span>
           <div className="flex gap-3">
             <Link
-              href="/#contact"
+              href={contactNav.href}
               className="rounded-full px-3 py-2 transition-colors hover:text-brand-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-accent"
             >
               {contactNav.label}
             </Link>
             <Link
-              href="/#events"
+              href={eventsNav.href}
               className="rounded-full px-3 py-2 transition-colors hover:text-brand-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-accent"
             >
               {eventsNav.label}

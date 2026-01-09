@@ -15,7 +15,7 @@ export default function EventsPage() {
   useEffect(() => {
     if (typeof navigator === "undefined") return;
     const lang = navigator.language.toLowerCase();
-    setLocale(lang.startsWith("nl") ? "nl" : "en");
+    if (lang.startsWith("nl")) setLocale("nl");
   }, []);
 
   const content = useMemo(() => getSiteContent(locale), [locale]);
@@ -56,7 +56,7 @@ export default function EventsPage() {
                 </span>
               </div>
               <div className="mt-6 flex gap-3">
-                <ArrowLink href="/#contact" label={content.contactSection.linkLabels.upcoming} />
+                <ArrowLink href="/contact" label={content.contactSection.linkLabels.upcoming} />
                 <Link
                   href="/"
                   className="rounded-full px-4 py-2 text-brand-textMuted transition-colors hover:text-brand-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-accent"

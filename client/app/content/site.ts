@@ -9,16 +9,16 @@ const translations: Record<Locale, SiteContent> = {
       footerNote: "Cafe Vader Klaassens · Venlo",
     },
     navItems: [
-      { label: "Home", href: "/#home" },
+      { label: "Home", href: "/" },
       { label: "Events", href: "/events" },
-      { label: "Contact", href: "/#contact" },
+      { label: "Contact", href: "/contact" },
     ],
     hero: {
       eyebrow: "Venlo • Cafe Vader Klaassens",
       heading: "A warm welcome in the living room of Venlo.",
       subheading:
         "Drop by for a pint of Brand, rotating Dutch and Belgian beers, and the easy chatter of regulars.",
-      primaryCta: { label: "Get in touch", href: "/#contact" },
+      primaryCta: { label: "Get in touch", href: "/contact" },
       secondaryCta: { label: "See events", href: "/#events" },
       badges: [
         "Brand on tap",
@@ -93,16 +93,16 @@ const translations: Record<Locale, SiteContent> = {
       footerNote: "Cafe Vader Klaassens · Venlo",
     },
     navItems: [
-      { label: "Home", href: "/#home" },
+      { label: "Home", href: "/" },
       { label: "Agenda", href: "/events" },
-      { label: "Contact", href: "/#contact" },
+      { label: "Contact", href: "/contact" },
     ],
     hero: {
       eyebrow: "Venlo • Cafe Vader Klaassens",
       heading: "Welkom in de huiskamer van Venlo.",
       subheading:
         "Kom binnen voor een glas Brand, wisselende bieren en de gemoedelijke praat van vaste gasten.",
-      primaryCta: { label: "Neem contact op", href: "/#contact" },
+      primaryCta: { label: "Neem contact op", href: "/contact" },
       secondaryCta: { label: "Bekijk de agenda", href: "/#events" },
       badges: [
         "Brand van de tap",
@@ -171,4 +171,4 @@ const translations: Record<Locale, SiteContent> = {
   },
 };
 
-export const getSiteContent = (locale: Locale = "en") => translations[locale] ?? translations.en;
+export const getSiteContent = (locale: Locale = "nl") => translations[locale] ?? translations.nl;
