@@ -26,7 +26,7 @@ const translations: Record<Locale, SiteContent> = {
         "Live music nights",
       ],
       tonight: {
-        label: "Tonight at the pub",
+        label: "15 January at Vader Klaassens",
         value: "21:30 Dame Du Ton · later Octopus",
         pill: "Event page",
       },
@@ -110,7 +110,7 @@ const translations: Record<Locale, SiteContent> = {
         "Live muziek avonden",
       ],
       tonight: {
-        label: "Vanavond in het café",
+        label: "15 januari bij Vader Klaassens",
         value: "21:30 Dame Du Ton · later Octopus",
         pill: "Bekijk event",
       },
