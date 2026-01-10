@@ -30,15 +30,7 @@ const Contact = ({ contact, sectionCopy }: ContactProps) => (
             {contact.phone}
           </Link>
         </div>
-        <div className="flex flex-col gap-1">
-          <p className="text-sm text-brand-textMuted">Email</p>
-          <Link
-            href={`mailto:${contact.email}`}
-            className="text-lg font-medium underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-accent"
-          >
-            {contact.email}
-          </Link>
-        </div>
+      
         <div className="flex flex-wrap gap-3 pt-2">
           <ArrowLink href="/events" label={sectionCopy.linkLabels.upcoming} tone="ghost" />
           <ArrowLink href="/" label={sectionCopy.linkLabels.backToTop} tone="ghost" />

@@ -75,8 +75,8 @@ const translations: Record<Locale, SiteContent> = {
     },
     contact: {
       heading: "Ready when you are",
-      address: "Parade 42, 5911 CD Venlo",
-      phone: "+31 (0)77 555 0101",
+      address: "Parade 67, 5911 CB Venlo",
+      phone: "+316 83 89 8690",
       email: "hallo@cafevaderklaassens.nl",
       hours: [
         { label: "Wed-Thu", value: "16:00 – 01:00" },
@@ -159,8 +159,8 @@ const translations: Record<Locale, SiteContent> = {
     },
     contact: {
       heading: "We staan klaar",
-      address: "Parade 42, 5911 CD Venlo",
-      phone: "+31 (0)77 555 0101",
+      address: "Parade 67, 5911 CB Venlo",
+      phone: "+316 83 89 8690",
       email: "hallo@cafevaderklaassens.nl",
       hours: [
         { label: "Wo-Do", value: "16:00 – 01:00" },
