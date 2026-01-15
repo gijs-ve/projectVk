@@ -140,6 +140,7 @@ const localizeEvent = (event: Event, locale: Locale): LocalizedEvent => ({
 });
 
 export const getEventBySlugAndDate = (slug: string, date: string): Event | undefined => {
+
   return events.find((event) => event.slug === slug && event.date === date);
 };
 
