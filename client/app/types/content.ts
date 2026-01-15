@@ -11,9 +11,16 @@ export type Highlight = {
 };
 
 export type EventItem = {
+  id: string;
+  slug: string;
+  date: string; // ISO date used for routing
+  displayDate: string; // Human-friendly date for UI
   title: string;
-  date: string;
   blurb: string;
+  location: string;
+  startTime?: string;
+  tags?: string[];
+  venue?: string;
 };
 
 export type ContactHour = {
@@ -38,7 +45,7 @@ export type HeroContent = {
   primaryCta: CTA;
   secondaryCta: CTA;
   badges: string[];
-  tonight: { label: string; value: string; pill: string };
+  tonight: { label: string; value: string; pill: string; href?: string };
 };
 
 export type SectionCopy = {
@@ -71,6 +78,7 @@ export type SiteContent = {
   highlightsSection: SectionCopy;
   highlights: Highlight[];
   eventsSection: EventsSectionCopy;
+  featuredEventIds?: string[];
   events: EventItem[];
   contactSection: ContactSectionCopy;
   contact: ContactInfo;

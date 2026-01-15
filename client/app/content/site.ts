@@ -1,3 +1,4 @@
+import { getFeaturedEvents } from "./events";
 import type { Locale, SiteContent } from "../types/content";
 
 const translations: Record<Locale, SiteContent> = {
@@ -29,6 +30,7 @@ const translations: Record<Locale, SiteContent> = {
         label: "15 January at Vader Klaassens",
         value: "21:30 Dame Du Ton · later Octopus",
         pill: "Event page",
+        href: "/events",
       },
     },
     highlightsSection: {
@@ -57,14 +59,8 @@ const translations: Record<Locale, SiteContent> = {
       description: "Curated nights at Vader Klaassens and friends.",
       ctaLabel: "More info",
     },
-    events: [
-      {
-        title: "Curated by FLUJAS",
-        date: "Thu 15 Jan · Venlo",
-        blurb:
-          "With De Nieuwe Scene and Cafe Vader Klaassens for Limburg Film Festival. 21:30 Dame Du Ton (ambient art rock), later Octopus (psychedelic garage). Free entry at Vader Klaassens; first drink on FLUJAS at Creatives Café.",
-      },
-    ],
+    featuredEventIds: ["event1"],
+    events: [],
     contactSection: {
       title: "Come by or reach out",
       eyebrow: "Visit • Call • Mail",
@@ -113,6 +109,7 @@ const translations: Record<Locale, SiteContent> = {
         label: "15 januari bij Vader Klaassens",
         value: "21:30 Dame Du Ton · later Octopus",
         pill: "Bekijk event",
+        href: "/events",
       },
     },
     highlightsSection: {
@@ -141,21 +138,15 @@ const translations: Record<Locale, SiteContent> = {
       description: "Avonden bij Vader Klaassens en vrienden.",
       ctaLabel: "Meer weten?",
     },
-    events: [
-      {
-        title: "Gecureerd door FLUJAS",
-        date: "Do 15 jan · Venlo",
-        blurb:
-          "Samen met De Nieuwe Scene en Cafe Vader Klaassens voor Limburg Film Festival. 21:30 Dame Du Ton (ambient artrock), daarna Octopus (psychedelische garagerock). Gratis bij Vader Klaassens; eerste drankje van FLUJAS tijdens Creatives Café.",
-      },
-    ],
+    featuredEventIds: ["event1"],
+    events: [],
     contactSection: {
       title: "Loop binnen of laat iets weten",
       eyebrow: "Bezoek • Bel • Mail",
       description: "Geef een seintje dat je komt, of stap gewoon binnen.",
       hoursTitle: "Openingstijden",
       linkLabels: { upcoming: "Agenda", backToTop: "Naar boven" },
-      note: "Binnenlopen mag altijd. Voor groepen van zes of meer graag even bellen, dan houden we een hoekje vrij.",
+      note: "Binnenlopen mag altijd.",
     },
     contact: {
       heading: "We staan klaar",
@@ -171,4 +162,17 @@ const translations: Record<Locale, SiteContent> = {
   },
 };
 
-export const getSiteContent = (locale: Locale = "nl") => translations[locale] ?? translations.nl;
+export const getSiteContent = (locale: Locale = "nl"): SiteContent => {
+  const base = translations[locale] ?? translations.nl;
+  const events = getFeaturedEvents(locale, base.featuredEventIds ?? []);
+  const firstEvent = events[0];
+  const hero = {
+    ...base.hero,
+    tonight: {
+      ...base.hero.tonight,
+      href: firstEvent ? `/events/${firstEvent.slug}/${firstEvent.date}` : base.hero.tonight.href ?? "/events",
+    },
+  };
+
+  return { ...base, hero, events };
+};

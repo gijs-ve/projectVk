@@ -38,7 +38,7 @@ export default function HomePage() {
 
         <main className="flex flex-col gap-10 lg:gap-12">
           <Hero content={content.hero} />
-          <Highlights sectionCopy={content.highlightsSection} items={content.highlights} />
+          {/* <Highlights sectionCopy={content.highlightsSection} items={content.highlights} /> */}
           <Events sectionCopy={content.eventsSection} items={content.events} />
         </main>
 
