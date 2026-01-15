@@ -82,11 +82,7 @@ export default function EventsPage() {
                               {tag}
                             </span>
                           ))}
-                          {event.venue && (
-                            <span className="inline-flex items-center gap-2 rounded-full border border-brand-border bg-white/5 px-3 py-2">
-                              {event.venue}
-                            </span>
-                          )}
+                       
                         </div>
                       )}
                     </div>

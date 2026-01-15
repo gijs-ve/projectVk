@@ -39,6 +39,90 @@ export const events: Event[] = [
     tags: ["Limburg Film Festival", "Ambient Artrock", "Psychedelic Garagerock"],
     venue: "Cafe Vader Klaassens",
   },
+  {
+    id: "event2",
+    slug: "southern-blues-society",
+    date: "2026-03-22",
+    title: {
+      en: "The Southern Blues Society",
+      nl: "The Southern Blues Society",
+    },
+    blurb: {
+      en: "Electric and slide-forward blues with a Southern edge. Grab a pint and settle in for grooves and grit.",
+      nl: "Elektrische blues met slide en Southern-sound. Pak een pint en leun achterover voor grooves en grit.",
+    },
+    description: {
+      en: "The Southern Blues Society brings smoky guitars, harmonica hooks, and road-worn vocals to Venlo. Expect a set that drifts from shuffles to slow-burn ballads, all with a Southern bite.",
+      nl: "The Southern Blues Society brengt rauwe gitaren, mondharmonica-hooks en doorleefde vocals naar Venlo. Reken op een set die schuift van shuffles naar slow-burn ballads, altijd met een Southern-bite.",
+    },
+    location: "Venlo",
+    startTime: "18:00",
+    tags: ["Blues", "Live Music"],
+    venue: "Cafe Vader Klaassens",
+  },
+  {
+    id: "event3",
+    slug: "wild-karma",
+    date: "2026-05-17",
+    title: {
+      en: "Wild Karma",
+      nl: "Wild Karma",
+    },
+    blurb: {
+      en: "Raw indie rock with sing-along hooks and plenty of fuzz. One for the front-row crowd.",
+      nl: "Rauwe indierock met meezing-hooks en veel fuzz. Voor iedereen die graag vooraan staat.",
+    },
+    description: {
+      en: "Wild Karma crashes in with driving drums, bright guitars, and choruses built to shout. A tight, energetic set that keeps the room moving from the first chord.",
+      nl: "Wild Karma komt binnen met stuwende drums, felle gitaren en refreinen om mee te brullen. Een energieke set die de zaal vanaf de eerste noot in beweging houdt.",
+    },
+    location: "Venlo",
+    startTime: "18:00",
+    tags: ["Indie Rock", "Live Music"],
+    venue: "Cafe Vader Klaassens",
+  },
+  {
+    id: "event4",
+    slug: "three-dilly-tuffys",
+    date: "2026-05-24",
+    title: {
+      en: "Three Dilly Tuffys",
+      nl: "Three Dilly Tuffys",
+    },
+    blurb: {
+      en: "Swinging roots trio mixing folk, jazz, and barroom charm. Easy smiles, tight harmonies.",
+      nl: "Swingende roots-trio met folk, jazz en kroegcharme. Luchtige sfeer, strakke harmonieën.",
+    },
+    description: {
+      en: "Three Dilly Tuffys blend upright bass, guitar, and light percussion for a breezy roots set. Expect close harmonies, playful solos, and a room that feels like a back-porch session.",
+      nl: "Three Dilly Tuffys mengen contrabas, gitaar en lichte percussie tot een luchtige roots-set. Verwacht close harmony, speelse solo's en een kroeg die voelt als een veranda-sessie.",
+    },
+    location: "Venlo",
+    startTime: "18:00",
+    tags: ["Roots", "Folk", "Live Music"],
+    venue: "Cafe Vader Klaassens",
+  },
+  {
+    id: "event5",
+    slug: "acoustic-session",
+    date: "2026-02-25",
+    title: {
+      en: "Acoustic Session",
+      nl: "Acoustic Session",
+    },
+    blurb: {
+      en: "Open-room acoustic night with local players trading songs and stories.",
+      nl: "Akoestische avond waar lokale muzikanten songs en verhalen uitwisselen.",
+    },
+    description: {
+      en: "A laid-back acoustic session: local songwriters and friends share originals and favorites. Low stage volume, plenty of room to listen, and an easy-going Thursday vibe.",
+      nl: "Een relaxte akoestische sessie: lokale songwriters en vrienden delen eigen werk en favorieten. Laag volume, ruimte om te luisteren en een gemoedelijke donderdagvibe.",
+    },
+    location: "Venlo",
+    startTime: "20:00",
+    tags: ["Acoustic", "Songwriters"],
+    venue: "Cafe Vader Klaassens",
+  },
 ];
 
 const localizeEvent = (event: Event, locale: Locale): LocalizedEvent => ({
