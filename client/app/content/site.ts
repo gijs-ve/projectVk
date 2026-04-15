@@ -1,4 +1,4 @@
-import { getFeaturedEvents } from "./events";
+import { getFeaturedEvents, getNextUpcomingEvents } from "./events";
 import type { Locale, SiteContent } from "../types/content";
 
 const translations: Record<Locale, SiteContent> = {
@@ -164,12 +164,16 @@ const translations: Record<Locale, SiteContent> = {
 
 export const getSiteContent = (locale: Locale = "nl"): SiteContent => {
   const base = translations[locale] ?? translations.nl;
-  const events = getFeaturedEvents(locale, base.featuredEventIds ?? []);
+  const events = getNextUpcomingEvents(locale, 3);
   const firstEvent = events[0];
   const hero = {
     ...base.hero,
     tonight: {
       ...base.hero.tonight,
+      label: firstEvent
+        ? firstEvent.displayDate + (firstEvent.startTime ? ` · ${firstEvent.startTime}` : "")
+        : base.hero.tonight.label,
+      value: firstEvent ? firstEvent.title : base.hero.tonight.value,
       href: firstEvent ? `/events/${firstEvent.slug}/${firstEvent.date}` : base.hero.tonight.href ?? "/events",
     },
   };

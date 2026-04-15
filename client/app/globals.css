@@ -1,37 +1,109 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1c140f;
+  --foreground: #f7e6cf;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* Brand palette mirrored from tailwind.config.ts so v4 picks it up */
+  /* Brand palette */
   --color-brand-bg: #1c140f;
   --color-brand-surface: #241711;
   --color-brand-overlay: #2d1d14;
   --color-brand-accent: #e0b15a;
   --color-brand-accent-muted: #b77b42;
+  --color-brand-accent-subtle: #8b6a3e;
   --color-brand-text: #f7e6cf;
   --color-brand-text-muted: #d7c2a9;
   --color-brand-border: #3a271b;
+  --color-brand-border-light: #4d3828;
   --color-brand-glow: #f2c77f;
+  --color-brand-wine: #6b2d3e;
+  --color-brand-wine-muted: #4a1f2c;
+  --color-brand-ember: #c4501a;
+  --color-brand-ember-muted: #8a3a14;
+  --color-brand-cream: #faf0e1;
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-cinzel);
+  /* Shadows */
+  --shadow-deep: 0 40px 120px -60px rgba(0, 0, 0, 0.9);
+  --shadow-medium: 0 30px 80px -50px rgba(0, 0, 0, 0.8);
+  --shadow-soft: 0 20px 50px -40px rgba(0, 0, 0, 1);
+  --shadow-card: 0 8px 32px -8px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.03);
+  --shadow-glow: 0 0 40px -10px rgba(224, 177, 90, 0.15);
+  --shadow-glow-lg: 0 0 80px -20px rgba(224, 177, 90, 0.2);
+  /* Max widths */
+  --max-w-content: 1200px;
+  --max-w-content-wide: 1400px;
+  /* Animations */
+  --animate-float-slow: float-slow 6s ease-in-out infinite;
+  --animate-pulse-warm: pulse-warm 4s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-warm {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Grain texture overlay — applied via a pseudo-element on the page wrapper */
+.grain-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Custom scrollbar for the warm theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c140f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a271b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4d3828;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(224, 177, 90, 0.3);
+  color: #faf0e1;
 }
