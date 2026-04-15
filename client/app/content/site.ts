@@ -95,7 +95,7 @@ const translations: Record<Locale, SiteContent> = {
     ],
     hero: {
       eyebrow: "Venlo • Cafe Vader Klaassens",
-      heading: "Welkom in de huiskamer van Venlo.",
+      heading: "Welkom in de huiskamer van Venlo",
       subheading:
         "Kom binnen voor een glas Brand, wisselende bieren en de gemoedelijke praat van vaste gasten.",
       primaryCta: { label: "Neem contact op", href: "/contact" },
