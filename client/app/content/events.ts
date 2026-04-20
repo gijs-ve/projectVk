@@ -228,6 +228,27 @@ export const events: Event[] = [
     tags: ["60's Garage", "R&B", "Turin"],
     venue: "Cafe Vader Klaassens",
   },
+  {
+    id: "event11",
+    slug: "eamonn-mccormack",
+    date: "2026-04-26",
+    title: {
+      en: "Eamonn McCormack (IRE)",
+      nl: "Eamonn McCormack (IRE)",
+    },
+    blurb: {
+      en: "Dublin-born blues-rock guitarist and singer-songwriter bringing his heartfelt, power-trio sound to Venlo on a Sunday evening.",
+      nl: "Blues-rockgitarist en singer-songwriter uit Dublin brengt zijn doorleefde power-trio-sound op zondagavond naar Venlo.",
+    },
+    description: {
+      en: "All the way from Dublin — Eamonn McCormack is an Irish blues-rock guitarist and singer-songwriter whose career has taken him from church folk masses to the main stage of Rockpalast. Early influences like Rory Gallagher, Jimi Hendrix, and Thin Lizzy shaped a style that's raw, melodic, and unmistakably his own.\n\nFormerly recording under the name Samuel Eddy, Eamonn has shared stages with Rory Gallagher, Johnny Winter, Jan Akkerman, Walter Trout, and Nils Lofgren, and opened for ZZ Top in Amsterdam. His album Storyteller hit No. 1 on blues charts in over half a dozen countries, and his latest self-titled album Eamonn McCormack charted high across Europe.\n\nExpect a true power-trio set: heart-felt passion, electrifying guitar work, and songs that tell stories — the hallmarks of a real Irish music legend in the making.",
+      nl: "Helemaal uit Dublin — Eamonn McCormack is een Ierse blues-rockgitarist en singer-songwriter wiens carrière hem bracht van folk-missen in de kerk tot het hoofdpodium van Rockpalast. Vroege invloeden als Rory Gallagher, Jimi Hendrix en Thin Lizzy vormden een stijl die rauw, melodieus en onmiskenbaar eigen is.\n\nEerder uitgebracht onder de naam Samuel Eddy, deelde Eamonn het podium met Rory Gallagher, Johnny Winter, Jan Akkerman, Walter Trout en Nils Lofgren, en opende hij voor ZZ Top in Amsterdam. Zijn album Storyteller stond op nummer 1 in de blueslijsten van meer dan zes landen, en zijn nieuwste titelloze album Eamonn McCormack scoorde hoog in heel Europa.\n\nVerwacht een echte power-trio-set: doorleefde passie, elektriserend gitaarwerk en songs die verhalen vertellen — de kenmerken van een nieuwe Ierse muzieklegende.",
+    },
+    location: "Venlo",
+    startTime: "19:00",
+    tags: ["Blues Rock", "Ireland", "Live Music"],
+    venue: "Cafe Vader Klaassens",
+  },
 ];
 
 const localizeEvent = (event: Event, locale: Locale): LocalizedEvent => ({
