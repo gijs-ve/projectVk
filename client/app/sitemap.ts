@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { getAllEvents } from "./content/events";
 
-const BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://cafevaderklaassens.nl").replace(/\/$/, "");
+const BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://vaderklaassens.nl").replace(/\/$/, "");
 
 type DynamicEntry = { path: string; lastModified?: Date };
 
