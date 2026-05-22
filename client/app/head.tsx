@@ -1,4 +1,4 @@
-import { absoluteUrl, defaultOgImage, siteDescription, siteName } from "./lib/seo";
+import { absoluteUrl, defaultOgImage, siteDescription, siteName, siteShortName } from "./lib/seo";
 
 export default function Head() {
   const title = siteName;
@@ -13,7 +13,7 @@ export default function Head() {
       <meta property="og:description" content={description} />
       <meta property="og:image" content={defaultOgImage} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content={siteName} />
+      <meta property="og:site_name" content={siteShortName} />
       <meta property="og:url" content={url} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />

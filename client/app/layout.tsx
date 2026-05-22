@@ -8,8 +8,10 @@ import {
   siteDescription,
   siteKeywords,
   siteName,
+  siteShortName,
   siteTagline,
   siteUrl,
+  webSiteJsonLd,
 } from "./lib/seo";
 
 const geistSans = Geist({
@@ -43,7 +45,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "nl_NL",
     url: absoluteUrl("/"),
-    siteName,
+    siteName: siteShortName,
     title: `${siteName} · ${siteTagline}`,
     description: siteDescription,
     images: [{ url: defaultOgImage, width: 1200, height: 630, alt: siteName }],
@@ -55,9 +57,13 @@ export const metadata: Metadata = {
     images: [defaultOgImage],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
     shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/manifest.webmanifest",
   robots: {
@@ -88,6 +94,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd()) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(barOrPubJsonLd()) }}

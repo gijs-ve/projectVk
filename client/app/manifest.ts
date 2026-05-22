@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
-import { siteDescription, siteName } from "./lib/seo";
+import { siteDescription, siteName, siteShortName } from "./lib/seo";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteName,
-    short_name: "Vader Klaassens",
+    short_name: siteShortName,
     description: siteDescription,
     start_url: "/",
     display: "standalone",
@@ -13,9 +13,14 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "nl-NL",
     icons: [
       {
-        src: "/favicon.ico",
-        sizes: "any",
-        type: "image/x-icon",
+        src: "/android-chrome-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        src: "/android-chrome-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
       },
     ],
   };

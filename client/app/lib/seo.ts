@@ -14,6 +14,7 @@ export const absoluteUrl = (path: string = "/"): string => {
 };
 
 export const siteName = "Cafe Vader Klaassens";
+export const siteShortName = "Vader Klaassens";
 export const siteTagline = "Café aan de Parade in Venlo";
 export const siteDescription =
   "Cafe Vader Klaassens — café aan de Parade in Venlo met Brand op tap, wisselende speciaalbieren en live muziek. Loop binnen voor een warme huiskamer-sfeer.";
@@ -48,6 +49,14 @@ export const business = {
     { days: ["Sunday"], opens: "16:00", closes: "01:00" },
   ],
 } as const;
+
+export const webSiteJsonLd = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteShortName,
+  alternateName: siteName,
+  url: siteUrl,
+});
 
 export const barOrPubJsonLd = () => ({
   "@context": "https://schema.org",
